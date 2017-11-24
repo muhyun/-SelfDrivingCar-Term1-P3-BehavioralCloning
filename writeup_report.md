@@ -160,7 +160,9 @@ To capture good driving behavior, I first recorded two laps on track one using c
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover to the middle of the road. These images show what a recovery looks like starting from the right of the road to the midle:
 
 ![alt text][image3] Car is off the road
+
 ![alt text][image4] Car is recovering to the middle
+
 ![alt text][image5] Car is also positioned in the midele of the road
 
 Then I repeated this process on track two in order to get more data points.
@@ -168,6 +170,7 @@ Then I repeated this process on track two in order to get more data points.
 To augment the data sat, I also flipped images and angles thinking that this would make the model robust because the track mostly consists of left curves. The model learns how to follow left curves good enough, but without enough data telling how to follow right curves the model will be confused on the left right curve. To overcome this, I could use a track having more right curve, but flipping images give the same. For example, here is an image that has then been flipped:
 
 ![alt text][image6] Original image
+
 ![alt text][image7] Flipped image (streering wheel angle also flipped)
 
 Also, to reduce any noise all images are cropped to contain only road not tree or water which are not necessary for learning. Here is what it is done.
