@@ -200,10 +200,5 @@ I used this training data for training the model. The validation set helped to d
 
 Curious on how well it works? Here is the video recording from self-driving car using the model trained.
 
-<script src="http://vjs.zencdn.net/4.0/video.js"></script>
-
-<video id="pelican-installation" class="video-js vjs-default-skin" controls
-preload="auto" width="683" height="384" 
-data-setup="{}">
-<source src="./video.mp4" type='video/mp4'>
-</video>
+<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+<video src="video.mp4" width="320" height="200" controls preload></video>
