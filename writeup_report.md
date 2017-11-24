@@ -1,7 +1,7 @@
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-#**Behavioral Cloning** 
+# **Behavioral Cloning** 
 
 My project includes the following files:
 * model.py containing the script to create and train the model
