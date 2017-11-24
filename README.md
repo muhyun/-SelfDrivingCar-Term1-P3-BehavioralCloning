@@ -89,7 +89,7 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to learn from images with steering wheel angle.
 
 My first step was to use a convolution neural network model similar to the famous and simple ConvNet, LeNet. I thought this model might be appropriate because the model needs to predict the streering wheel's angel for a given image taken from the onboard camera. This can be easily achieved by having 1 neuron in the output layer, and make it regression not classification. For that, MSE (Mean Squared Error) is chosen as the cost function.
 
@@ -101,7 +101,7 @@ The final step was to run the simulator to see how well the car was driving arou
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture consisted of a convolution neural network with 5 convolutional layers and 3 fully connected layers. The first 2 layers are to normalize inputs and to drop input images.
 
