@@ -201,14 +201,8 @@ I used this training data for training the model. The validation set helped to d
 Curious on how well it works? Here is the video recording from self-driving car using the model trained. 
 
 
-
-
-.... <!-- post content -->
-
 <div class="video_container">
   <video controls="controls" allowfullscreen="true" poster="path/to/poster_image.png">
     <source src="video.mp4" type="video/mp4">
   </video> 
 </div>
-
-.... <!-- post content -->
