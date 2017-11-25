@@ -45,7 +45,7 @@ The model I implemented for cloning the driver's behavior follow PilotNet which 
 
 ![alt text][image0]
 
-The model consists of 5 convolutional layers followed by 3 fullu connected hidden layers. The output layer has one neuron which gives the angle of streering wheel. The first 3 convolutional layer use (5,5) kernels, while the following 2 convonlutional layers use (3,3) kernels.
+The model consists of 5 convolutional layers followed by 3 fully connected hidden layers. The output layer has one neuron which gives the angle of streering wheel. The first 3 convolutional layer use (5,5) kernels, while the following 2 convonlutional layers use (3,3) kernels. ReLU activation function is added to each layer for non-linearity.
 
 #### 2. Attempts to reduce overfitting in the model
 
@@ -69,7 +69,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1))
 ```
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
@@ -82,6 +82,8 @@ Training data was chosen to keep the vehicle driving on the road. I used a combi
 One important learning from this project. The initial training data includes frames where my simulation car goes to either right or left side of the road. Even the training data includes frames where the car goes out of the road. 
 
 Why? I need to get training data which includes recovering, and I need first to the right or left or even out of the road. However, what the models learns is not only how to recover but also how to get off the road, which is NOT what I expect. To overcome this funny result, I excluded the video frames where the car moves to the right or left of the road, and out of the road. Dataset only includes frames of recovering. With that, the model knows how to recover while trying to keep itself in the middle of the road.
+
+Also, the first partially successful model sometimes got stuck when the car approached to curb. This model only learn steering angle based on the images. The car only goes forward. So, when this happends, it tries to make a progress only by moving left or right, which fails to solve this stuck problem. The only way to solve this problem is not to hit the curb, and this can be achieved by giving such training data; data showing moving away from the curb. I gathered such data additionally, and re-train the model, which make a progress.
 
 For details about how I created the training data, see the next section. 
 
@@ -103,13 +105,13 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
-The final model architecture consisted of a convolution neural network with 5 convolutional layers and 3 fully connected layers. The first 2 layers are to normalize inputs and to drop input images.
+The final model architecture consisted of a convolution neural network with 5 convolutional layers and 3 fully connected layers. The first 2 layers are to normalize inputs and to drop input images. First 3 convolutional layers uses (5,5) kernel with (2,2) subsamples or strides. The following 2 convonlutional layers uses (3,3) kernels with the default subsamples (1,1).
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
 ![alt text][image1]
 
-Also, check out the below model summary. Keras provide summary() function to desctibe the model with number of parameters for each layers,  output share, and the total number of parameters of the model. As seen below, the number of parameters of convolutional layers are smaller than one of fully connected layers.
+Also, check out the below model summary. Keras provide summary() function to desctibe the model with number of parameters for each layers, output shape, and the total number of parameters of the model. As seen below, the number of parameters of convolutional layers are smaller than one of fully connected layers, which is one of characteristic of ConvNet.
 
 ```
 _________________________________________________________________
@@ -133,15 +135,22 @@ flatten_1 (Flatten)          (None, 2112)              0
 _________________________________________________________________
 dense_1 (Dense)              (None, 100)               211300
 _________________________________________________________________
+dropout_1 (Dropout)          (None, 100)               0
+_________________________________________________________________
 dense_2 (Dense)              (None, 50)                5050
 _________________________________________________________________
+dropout_2 (Dropout)          (None, 50)                0
+_________________________________________________________________
 dense_3 (Dense)              (None, 10)                510
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 10)                0
 _________________________________________________________________
 dense_4 (Dense)              (None, 1)                 11
 =================================================================
 Total params: 348,219
 Trainable params: 348,219
 Non-trainable params: 0
+_________________________________________________________________
 ```
 
 How to plot the model and to give summary from Keras? Very simple.
