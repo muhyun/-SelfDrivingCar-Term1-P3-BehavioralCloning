@@ -25,23 +25,18 @@ The goals / steps of this project are the following:
 [image0]: ./images/pilotnet.png "PilotNet"
 [image1]: ./images/model.png "Model Visualization"
 [image2]: ./images/center_2017_11_19_04_22_15_285.jpg "Center"
-[image3]: ./images/recovery-1.jpg "Recovery Image"
-[image4]: ./images/recovery-2.jpg "Recovery Image"
-[image5]: ./images/recovery-3.jpg "Recovery Image"
 [image6]: ./images/original.jpg "Normal Image"
 [image7]: ./images/flipped.png "Flipped Image"
 [image8]: ./images/center_2017_11_19_04_22_15_285.jpg "Normal Image"
 [image9]: ./images/center-masked.png "Making Image"
 [image10]: ./images/center-cropped.png "Cropped Image"
-[image11]: ./images/loss-20-no-dropout.png "loss"
 [image12]: ./images/loss.no.dropout.png "loss without dropout"
 [image13]: ./images/loss.20epoch.dropout.png "loss with dropout"
 [image14]: ./images/angles-hist-data.png "steering angles histogram from maual driving"
-[image15]: ./images/angles-dist-data.png "steering angles distribution from manual driving"
 [image16]: ./images/angles-hist-data.u.png "steering angle histogram from udacity dataset"
 [image17]: ./images/angles-dist-data.u.png "steering angle distribution from udacity dataset"
-[image18]: ./images/angles-dist-data.u.png "steering angle distribution from udacity dataset"
 [image19]: ./images/angles-dist-data.u-aug.png "steering angle distribution with preporsessing"
+
 ---
 
 ### Model Architecture and Training Strategy
