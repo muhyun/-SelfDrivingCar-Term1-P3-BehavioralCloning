@@ -40,8 +40,8 @@ The goals / steps of this project are the following:
 [image15]: ./images/angles-dist-data.png "steering angles distribution from manual driving"
 [image16]: ./images/angles-hist-data.u.png "steering angle histogram from udacity dataset"
 [image17]: ./images/angles-dist-data.u.png "steering angle distribution from udacity dataset"
-[image17]: ./images/angles-dist-data.u.png "steering angle distribution from udacity dataset"
-[image18]: ./images/angles-dist-data.u-aug.png "steering angle distribution with preporsessing"
+[image18]: ./images/angles-dist-data.u.png "steering angle distribution from udacity dataset"
+[image19]: ./images/angles-dist-data.u-aug.png "steering angle distribution with preporsessing"
 ---
 
 ### Model Architecture and Training Strategy
@@ -208,7 +208,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 With these two applied, the steering angle distribution has less biased toward 0. But still there is a room for improvement.
 
-![alt text][image18]
+![alt text][image19]
 
 Also, to reduce any noise all images are cropped to contain only road not tree or water which are not necessary for learning. Here is what it is done.
 
